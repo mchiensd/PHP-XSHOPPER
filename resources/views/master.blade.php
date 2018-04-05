@@ -13,6 +13,8 @@
     <link href="source/css/animate.css" rel="stylesheet">
 	<link href="source/css/main.css" rel="stylesheet">
 	<link href="source/css/responsive.css" rel="stylesheet">
+        <link href="source/css/css.css" rel="stylesheet">
+
     <!--[if lt IE 9]>
     <script src="source/js/html5shiv.js"></script>
     <script src="source/js/respond.min.js"></script>
