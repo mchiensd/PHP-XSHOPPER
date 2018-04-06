@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>index</title>
+        <meta charset="utf-8">
+		<title>Login_Form</title>
+		<meta name="keywords" content="HTML5,CSS3,Template">
+		<meta name="description" content="">
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]">
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css">
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css">
+                
+                
+                <!-----script ---->
+                <!-- JAVASCRIPT FILES -->
+                <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+                <script type="text/javascript" src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+                <script type="text/javascript" src="assets/js/scripts.js"></script>
+                <!-- PAGE LEVEL SCRIPTS -->
+                <script type="text/javascript" src="assets/js/view/demo.shop.js"></script>
+                <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="assets/plugins/smoothscroll.js"></script>
+                
+                <script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+                <script type="text/javascript" src="assets/plugins/form.validate/jquery.form.min.js"></script>
+                <script type="text/javascript" src="assets/plugins/form.validate/jquery.validation.min.js"></script>
+                <script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+                 <script src='https://www.google.com/recaptcha/api.js'></script>
+
+        
+    </head>
+    <body>
+                <jsp:include page="header.jsp" ></jsp:include>
+               
+      			<section>
+				<div class="container">
+
+					<!-- RIGHT -->
+					<div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
+
+						<ul class="nav nav-tabs nav-top-border">
+							<li class="active"><a href="#info" data-toggle="tab">Personal Info</a></li>
+							<li><a href="#avatar" data-toggle="tab">Avatar</a></li>
+							<li><a href="#password" data-toggle="tab">Password</a></li>
+							<li><a href="#privacy" data-toggle="tab">Privacy</a></li>
+						</ul>
+
+						<div class="tab-content margin-top-20">
+
+							<!-- PERSONAL INFO TAB -->
+							<div class="tab-pane fade in active" id="info">
+								<form role="form" action="ChangeProfileController" method="post">
+                                                                   
+									<div class="form-group">
+										<label class="control-label">Họ tên</label>
+										<input type="text" placeholder="Họ tên" name="HoTen" class="form-control" value="<%=kh.getHoten()%>">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Email</label>
+										<input type="text" placeholder="Email" name="Email" class="form-control" value="<%=kh.getEmail()%>">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Số điện thoại</label>
+                                                                                <input type="text" placeholder="Số điện thoại " name="DienThoaiKH" class="form-control" value="<%=kh.getDienthoai()%>">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Ngày sinh </label>
+                                                                                <input type="text" placeholder="Ngày sinh " name="NgaySinh" class="form-control" value="<%=kh.getNgaysinh().split(" ")[0].split("-")[2]+"/"+kh.getNgaysinh().split(" ")[0].split("-")[1]+"/"+kh.getNgaysinh().split(" ")[0].split("-")[0]%>">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Địa chỉ </label>
+										<input type="text" placeholder="Địa chỉ " name="DiaChiKH" class="form-control" value="<%=kh.getDiachi()%>">
+									</div>	
+                                                                        <div class="form-group" style="display: none;">
+										<label class="control-label">tÀI KHOẢN </label>
+                                                                                <input type="text" placeholder="tk " name="TaiKhoan" class="form-control" value="<%=kh.getTaikhoan()%>" readonly>
+									</div>	
+									<div class="margiv-top10">
+                                                                                <input class="btn btn-primary" type="submit" value="Save Change">
+										<a href="#" class="btn btn-default">Cancel </a>
+									</div>
+								</form>
+							</div>
+							<!-- /PERSONAL INFO TAB -->
+
+							<!-- AVATAR TAB -->
+							<div class="tab-pane fade" id="avatar">
+
+								<form class="clearfix" action="#" method="post" enctype="multipart/form-data">
+									<div class="form-group">
+
+										<div class="row">
+
+											<div class="col-md-3 col-sm-4">
+
+												<div class="thumbnail">
+													<img class="img-responsive" src="assets/images/demo/people/460x700/8-min.jpg" alt="" />
+												</div>
+
+											</div>
+
+											<div class="col-md-9 col-sm-8">
+
+												<div class="sky-form nomargin">
+													<label class="label">Select File</label>
+													<label for="file" class="input input-file">
+														<div class="button">
+															<input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">Browse
+														</div><input type="text" readonly>
+													</label>
+												</div>
+
+												<a href="#" class="btn btn-danger btn-xs noradius"><i class="fa fa-times"></i> Remove Avatar</a>
+
+												<div class="clearfix margin-top-20">
+													<span class="label label-warning">NOTE! </span>
+													<p>
+														Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet!
+													</p>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="margiv-top10">
+										<a href="#" class="btn btn-primary">Save Changes </a>
+										<a href="#" class="btn btn-default">Cancel </a>
+									</div>
+
+								</form>
+
+							</div>
+							<!-- /AVATAR TAB -->
+
+							<!-- PASSWORD TAB -->
+							<div class="tab-pane fade" id="password">
+
+								<form action="#" method="post">
+
+									<div class="form-group">
+										<label class="control-label">Current Password</label>
+										<input type="password" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="control-label">New Password</label>
+										<input type="password" class="form-control">
+									</div>
+									<div class="form-group">
+										<label class="control-label">Re-type New Password</label>
+										<input type="password" class="form-control">
+									</div>
+
+									<div class="margiv-top10">
+										<a href="#" class="btn btn-primary"><i class="fa fa-check"></i> Change Password</a>
+										<a href="#" class="btn btn-default">Cancel </a>
+									</div>
+
+								</form>
+
+							</div>
+							<!-- /PASSWORD TAB -->
+
+							<!-- PRIVACY TAB -->
+							<div class="tab-pane fade" id="privacy">
+
+								<form action="#" method="post">
+									<div class="sky-form">
+
+										<table class="table table-bordered table-striped">
+											<tbody>
+												<tr>
+													<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</td>
+													<td>
+														<div class="inline-group">
+															<label class="radio nomargin-top nomargin-bottom">
+																<input type="radio" name="radioOption" checked=""><i></i> Yes
+															</label>
+
+															<label class="radio nomargin-top nomargin-bottom">
+																<input type="radio" name="radioOption" checked=""><i></i> No
+															</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</td>
+													<td>
+														<label class="checkbox nomargin">
+															<input type="checkbox" name="checkbox" checked=""><i></i> Yes
+														</label>
+													</td>
+												</tr>
+												<tr>
+													<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</td>
+													<td>
+														<label class="checkbox nomargin">
+															<input type="checkbox" name="checkbox" checked=""><i></i> Yes
+														</label>
+													</td>
+												</tr>
+												<tr>
+													<td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</td>
+													<td>
+														<label class="checkbox nomargin">
+															<input type="checkbox" name="checkbox" checked=""><i></i> Yes
+														</label>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+
+									<div class="margin-top-10">
+										<a href="#" class="btn btn-primary"><i class="fa fa-check"></i> Save Changes </a>
+										<a href="#" class="btn btn-default">Cancel </a>
+									</div>
+
+								</form>
+
+							</div>
+							<!-- /PRIVACY TAB -->
+
+						</div>
+
+					</div>
+
+					
+					<!-- LEFT -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8">
+					
+						<div class="thumbnail text-center">
+							<img src="assets/images/demo/people/460x700/8-min.jpg" alt="" />
+							<h2 class="size-18 margin-top-10 margin-bottom-0">Felica Doe</h2>
+							<h3 class="size-11 margin-top-0 margin-bottom-10 text-muted">DEVELOPER</h3>
+						</div>
+
+						<!-- completed -->
+						<div class="margin-bottom-30">
+							<label>88% completed profile</label>
+							<div class="progress progress-xxs">
+								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%; min-width: 2em;"></div>
+							</div>
+						</div>
+						<!-- /completed -->
+
+						<!-- SIDE NAV -->
+						<ul class="side-nav list-group margin-bottom-60" id="sidebar-nav">
+							<li class="list-group-item"><a href="page-profile.html"><i class="fa fa-eye"></i> PROFILE</a></li>
+							<li class="list-group-item active"><a href="page-profile-settings.html"><i class="fa fa-gears"></i> SETTINGS</a></li>
+
+							<li class="list-group-item list-toggle">   <!-- NOTE: "active" to be open on page load -->                
+								<a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-1">DROPDOWN EXAMPLE</a>
+								<ul id="collapse-1" class="collapse"><!-- NOTE: "collapse in" to be open on page load -->
+									<li><a href="#"><i class="fa fa-angle-right"></i> SUMBENU 1</a></li>
+									<li>
+										<span class="badge badge-red">New</span>
+										<a href="#"><i class="fa fa-angle-right"></i> SUMBENU 2</a>
+									</li>
+									<li class="active"><a href="#"><i class="fa fa-angle-right"></i> SUMBENU 3</a></li>
+									<li><a href="#"><i class="fa fa-angle-right"></i> SUMBENU 4</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- /SIDE NAV -->
+
+
+
+
+
+							
+						
+						</div>
+
+					</div>
+					
+				</div>
+			</section>  
+        			
+        
+        
+    </body>
+</html>
+

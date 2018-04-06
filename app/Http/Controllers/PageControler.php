@@ -18,7 +18,7 @@ class PageControler extends Controller
         $chude = chude::all();
         $loaiquanao=loaiquanao::all();
 
-       // dd($loaiquanao);
+       // dd($quanao);
         //exit();
     	
     	
@@ -27,8 +27,15 @@ class PageControler extends Controller
     public function getDetails()
     {
         $quanao = quanao::all();
-        print_r($quanao);
-        exit();
+       // print_r($quanao);
+        //exit();
     	return view('page.chitiet');
+    }
+     public function getHeader()
+    {
+        $chude = chude::all();
+       // print_r($quanao);
+        //exit();
+        return $chude;
     }
 }
