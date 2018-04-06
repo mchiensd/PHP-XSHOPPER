@@ -14,7 +14,7 @@ class PageControler extends Controller
     //
     public function getIndex()
     {
-    	$quanao = quanao::all();
+    	$quanao = quanao::simplePaginate(24);
         $chude = chude::all();
         $loaiquanao=loaiquanao::all();
 
@@ -37,5 +37,14 @@ class PageControler extends Controller
        // print_r($quanao);
         //exit();
         return $chude;
+    }
+public function getLoaiSanPham($type)
+    {
+        $loaisanpham = loaisanpham::where('MaCD',$type)->get();
+
+       // $SanPham_TheoLoai=quanao::where('MaLoaiQuanAo',$loaisanpham->MaLoaiQuanAo)->get();
+        dd($loaisanpham);
+        exit();
+        return view('page.loaisanpham',compact('SanPham_TheoLoai'));
     }
 }

@@ -24,4 +24,7 @@ Route::get('details',
 	['as' => 'ChiTiet',
 	'uses'=>'PageControler@getDetails'
 ]);
+Route::get('loai-san-pham/{type}',[
+'as' =>'loaisanpham',
+'uses'=>'PageControler@getLoaiSanPham']);
 

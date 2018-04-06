@@ -158,7 +158,7 @@
 							<!-- QUICK SHOP CART -->
                                                    
 							<li class="quick-carts">
-								<a href="cart.jsp">
+								<a href="/resources/views/page/giohang.blade.php">
 									<span id="countcart" class="badge badge-aqua btn-xs badge-corner">?</span>
 									<i class="fa fa-shopping-cart"></i> 
 								</a>
@@ -219,8 +219,8 @@
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main">
 									<li class="dropdown active"><!-- HOME -->
-										<a class="dropdown-toggle" href="index.jsp">
-											HOME
+										<a class="dropdown-toggle" href="{{route('Trang-chu')}}">
+											Trang chủ 
 										</a>
 										
                                                                             
@@ -234,15 +234,15 @@
 										<ul class="dropdown-menu">
 											
 											<li class="dropdown">
-												<a href="shirt_page.jsp?pages=1">
-													Quần
-												</a>	
-												<a href="shirt_page.jsp?pages=1">
-													Áo
+												@foreach($chude as $cd)
+												<a href="{{route('loaisanpham',$cd->MaCD)}}">
+													{{$cd->TenChuDe}}
 												</a>
-												<a href="shirt_page.jsp?pages=1">
-													Mắt kính
-												</a>		
+
+
+												@endforeach
+													
+												
                                                                                             
 											</li>     
 											   
