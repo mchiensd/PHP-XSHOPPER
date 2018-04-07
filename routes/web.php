@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('test', function () {
+    return view('page.chitiet');
 });
 
 
@@ -27,4 +27,8 @@ Route::get('details',
 Route::get('loai-san-pham/{type}',[
 'as' =>'loaisanpham',
 'uses'=>'PageControler@getLoaiSanPham']);
+
+Route::get('Chi-tiet-San-pham/{id}',[
+'as' =>'chitietquanao',
+'uses'=>'PageControler@getDetails']);
 

@@ -1,5 +1,5 @@
-@extends('master')
-@section('content')
+	@extends('master')
+	@section('content')
 
 
 
@@ -316,9 +316,69 @@
 
 
 
+			<div class="row" style="margin: 30px;">
+
+				<div class="col-sm-3">
 
 
-			<!-- NEW PRODUCTS -->
+
+					<div class="col-sm-12">
+					<div class="left-sidebar">
+						<h3>Loại Sản Phẩm</h3>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+
+
+							@foreach($chude as $ch)
+							
+								
+
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											{{$ch->TenChuDe}}
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											@foreach($loaiquanao as $loai)
+												@if($loai->MaCD==$ch->MaCD)
+
+												<li><a href="{{route('loaisanpham',$loai->MaLoaiQuanAo)}}">{{$loai->TenLoaiQuanAo}}</a></li>
+												@endif
+
+
+											@endforeach
+											
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+
+								
+								
+							
+
+							
+
+								
+							@endforeach
+							
+							
+							
+						</div><!--/category-products-->
+					
+					
+					</div>
+				</div>
+					
+				</div>
+				<div class="col-sm-9">
+						<!-- NEW PRODUCTS -->
 			<section>
 				<div class="container">
 
@@ -330,7 +390,7 @@
 
 						@foreach($quanao as $quanao)
 
-						<li class="col-lg-2 col-sm-4">
+						<li class="col-lg-4 col-sm-12" ">
 
 							<div class="shop-item">
 
@@ -389,6 +449,12 @@
 				</div>
 			</section>
 			<!-- NEW PRODUCTS -->
+					
+				</div>
+				
+			</div>
+
+		
 
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\quanao;
 use App\chude;
 use App\loaiquanao;
+use App\kichthuoc;
 
 
 class PageControler extends Controller
@@ -24,12 +25,14 @@ class PageControler extends Controller
     	
     	return view('page.trangchu',compact('quanao','chude','loaiquanao'));
     }
-    public function getDetails()
+    public function getDetails(Request $req)
     {
-        $quanao = quanao::all();
-       // print_r($quanao);
+        $quanao = quanao::where('MaQuanAo',$req->id)->first();
+        $kichthuoc= kichthuoc::where('MaKichThuoc',$quanao->MaKichThuoc)->get();
+
+        //($kichthuoc);
         //exit();
-    	return view('page.chitiet');
+    	return view('page.chitiet',compact('quanao','kichthuoc'));
     }
      public function getHeader()
     {
@@ -40,11 +43,15 @@ class PageControler extends Controller
     }
 public function getLoaiSanPham($type)
     {
-        $loaisanpham = loaisanpham::where('MaCD',$type)->get();
+       
+        $chude = chude::all();
+        $loaiquanao=loaiquanao::all();
+        $quanao= quanao::where('MaLoaiQuanAo',$type)->get();
 
-       // $SanPham_TheoLoai=quanao::where('MaLoaiQuanAo',$loaisanpham->MaLoaiQuanAo)->get();
-        dd($loaisanpham);
-        exit();
-        return view('page.loaisanpham',compact('SanPham_TheoLoai'));
+        return view('page.loaisanpham',compact('quanao'));
     }
+
+
+
 }
+    

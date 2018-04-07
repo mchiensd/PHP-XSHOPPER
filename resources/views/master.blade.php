@@ -32,6 +32,18 @@
         <link href="source/assets/css/header-1.css" rel="stylesheet" type="text/css" />
         <link href="source/assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
         <link href="source/assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+
+
+
+
+
+
+
+       
+       
+
+
     </head>
 
 <body>
@@ -58,5 +70,18 @@
 
         <!-- PAGE LEVEL SCRIPTS -->
         <script type="text/javascript" src="source/assets/js/view/demo.shop.js"></script>
+
+
+
+        
+        <!-- STYLESWITCHER - REMOVE -->
+        <script async type="text/javascript" src="source/assets/plugins/styleswitcher/styleswitcher.js"></script>
+
+
+
+
+
+
+       
     </body>
 </html>
