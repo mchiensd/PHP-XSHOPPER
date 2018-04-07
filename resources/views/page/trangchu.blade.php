@@ -397,7 +397,7 @@
 								<div class="thumbnail noborder nopadding">
 									<!-- product image(s) -->
 									<a class="shop-item-image" href="shop-single-left.html">
-										<img class="img-responsive" src="source/assets/images/shop/{{$quanao->AnhBia}}" alt="" />
+										<img class="img-responsive" src="source/assets/images/shop/AKX185.jpg" alt="" />
 									</a>
 									<!-- /product image(s) -->
 

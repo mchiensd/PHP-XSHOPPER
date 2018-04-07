@@ -32,7 +32,7 @@ class PageControler extends Controller
 
         //($kichthuoc);
         //exit();
-    	return view('page.chitiet',compact('quanao','kichthuoc'));
+    	return view('chitiet',compact('quanao','kichthuoc'));
     }
      public function getHeader()
     {

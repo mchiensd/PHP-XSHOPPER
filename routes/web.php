@@ -14,6 +14,9 @@
 Route::get('test', function () {
     return view('page.chitiet');
 });
+Route::get('test2', function () {
+    return view('page.giohang');
+});
 
 
 Route::get('index',
