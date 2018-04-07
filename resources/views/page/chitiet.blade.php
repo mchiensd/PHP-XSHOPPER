@@ -93,6 +93,25 @@
                                 </li>
                      
             <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    <div class="side-nav-head">
+                            <button class="fa fa-bars"></button>
+                                    <h5>Chi tiết sản phẩm :</h5>
+                                    <br>
+                                    <h5>{{$quanao->MoTa}}</h5>
+                                    <h5>Chất liệu :{{$quanao->ChatLieu}}</h5>
+                                    @foreach($nhasanxuat as $nsx)
+                                    @if($nsx->MaNSX==$quanao->MaNSX)
+                                         <h5>Nhà sản xuât : {{$nsx->TenNSX}}</h5>
+                                    @endif
+
+                                    @endforeach
+                                   
+                                    <br>
+                                  
+                    </div>
+
+
             </div>
 
                         <!-- LEFT -->
@@ -107,19 +126,16 @@
                     </div>
 
                     <ul class="list-group list-group-bordered list-group-noicon uppercase">
-                        <li class="list-group-item">
-                            <a href="shirt_page.jsp?pages=1">SHIRTS <span style=" float: right; ">(totals)</span></a>
-                                        
-                        </li>
-                        <li class="list-group-item">
-                                        <a href="pants_page.jsp?pages=1">PANTS <span style=" float: right; ">(totalp)</span></a>
-                                        
-                        </li>
-                                    
-                                    
-                                          
-                        <li class="list-group-item"><a href="glasses_page.jsp?pages=1">GLASSES <span style=" float: right; ">(totalg)</span></a></li>
 
+                        @foreach($chude as $cd)
+                                <li class="list-group-item">
+                            <a href="shirt_page.jsp?pages=1">{{$cd->TenChuDe}}<span style=" float: right; ">(totals)</span></a>
+                                        
+                        </li>    
+
+                        @endforeach
+                        
+                       
 
                     </ul>
 
@@ -127,28 +143,20 @@
                             <!-- /CATEGORIES -->
 
                             <!-- SIZE -->
+
                             <div class="margin-bottom-60">
                                 <h4>SIZE</h4>
+                                 @foreach($kichthuoc as $kt)
 
-                                <a class="tag" href="#">
-                                    <span class="txt">S</span>
-                                </a>
-                                <a class="tag" href="#">
-                                    <span class="txt bold">M</span>
-                                </a>
-                                <a class="tag" href="#">
-                                    <span class="txt">L</span>
-                                </a>
-                                <a class="tag" href="#">
-                                    <span class="txt">XL</span>
-                                </a>
-                                <a class="tag" href="#">
-                                    <span class="txt">2XL</span>
-                                </a>
-                                <a class="tag" href="#">
-                                    <span class="txt">3XL</span>
-                                </a>
+                                    @if($kt->MaKichThuoc==$quanao->MaKichThuoc)
+                                            <a class="tag" href="#">
+                                                        <span class="txt">{{$kt->TenKichThuoc}}</span>
+                                            </a>
+                                    @endif
+                                @endforeach
+
                                 
+                               
                                 <hr>
 
                                 
@@ -159,25 +167,15 @@
                             <!-- COLOR -->
                             <div class="margin-bottom-60">
                                 <h4>COLOR</h4>
+                                @foreach($mausac as $mausac)
+                                            @if($mausac->MaMauSac==$quanao->MaMauSac)
+                                                    <a class="tag shop-color" href="#" style="background-color:{{$mausac->MaMauCss}}"></a>
+                                            @endif
+
+                                @endforeach
                                 
-                                <a class="tag shop-color" href="#" style="background-color:#000000"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#FFFFFF"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#C0C0C0"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#0000E0"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#800080"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#FF0000"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#FF0080"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#FF6600"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#E0DCC8"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#F0E68C"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#FFFFD0"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#4B0082"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#666666"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#00FF00"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#36454F"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#F4A460"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#0088CC"></a>
-                                <a class="tag shop-color" href="#" style="background-color:#B38B6D"></a>
+                                
+                               
 
                                 <hr>
 
