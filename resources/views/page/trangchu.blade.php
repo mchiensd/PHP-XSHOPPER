@@ -335,13 +335,13 @@
 								<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian" href="#{{$ch->MaCD}}">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											{{$ch->TenChuDe}}
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
+								<div id="{{$ch->MaCD}}" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
 											@foreach($loaiquanao as $loai)
@@ -396,8 +396,8 @@
 
 								<div class="thumbnail noborder nopadding">
 									<!-- product image(s) -->
-									<a class="shop-item-image" href="shop-single-left.html">
-										<img class="img-responsive" src="source/assets/images/shop/AKX185.jpg" alt="" />
+									<a class="shop-item-image" href="{{route('chitietquanao',$quanao->MaQuanAo)}}">
+										<img class="img-responsive" src="source/assets/images/shop/{{$quanao->AnhBia}}"  alt="" />
 									</a>
 									<!-- /product image(s) -->
 

@@ -23,15 +23,17 @@ Route::get('index',
 	['as' => 'Trang-chu',
 	'uses'=>'PageControler@getIndex'
 ]);
-Route::get('details',
-	['as' => 'ChiTiet',
-	'uses'=>'PageControler@getDetails'
-]);
+
 Route::get('loai-san-pham/{type}',[
 'as' =>'loaisanpham',
 'uses'=>'PageControler@getLoaiSanPham']);
 
-Route::get('Chi-tiet-San-pham/{id}',[
+
+
+Route::get('chitietquanao/{id}',[
 'as' =>'chitietquanao',
-'uses'=>'PageControler@getDetails']);
+'uses'=>'PageControler@getChiTietQuanAo']);
+
+
+//Route::get('chitietquanao/{id}','PageControler@getChiTietQuanAo');
 

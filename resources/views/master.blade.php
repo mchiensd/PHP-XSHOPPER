@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+       
         <meta charset="utf-8" />
         <title>Smarty - Multipurpose + Admin</title>
         <meta name="keywords" content="HTML5,CSS3,Template" />

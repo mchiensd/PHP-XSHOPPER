@@ -19,21 +19,13 @@ class PageControler extends Controller
         $chude = chude::all();
         $loaiquanao=loaiquanao::all();
 
-       // dd($quanao);
+        //dd($quanao);
         //exit();
     	
     	
     	return view('page.trangchu',compact('quanao','chude','loaiquanao'));
     }
-    public function getDetails(Request $req)
-    {
-        $quanao = quanao::where('MaQuanAo',$req->id)->first();
-        $kichthuoc= kichthuoc::where('MaKichThuoc',$quanao->MaKichThuoc)->get();
-
-        //($kichthuoc);
-        //exit();
-    	return view('chitiet',compact('quanao','kichthuoc'));
-    }
+   
      public function getHeader()
     {
         $chude = chude::all();
@@ -49,6 +41,19 @@ public function getLoaiSanPham($type)
         $quanao= quanao::where('MaLoaiQuanAo',$type)->get();
 
         return view('page.loaisanpham',compact('quanao'));
+    }
+
+
+
+
+    public function getChiTietQuanAo($id)
+    {
+        $quanao = quanao::where('MaQuanAo',$id)->first();
+        //$kichthuoc= kichthuoc::where('MaKichThuoc',$quanao->MaKichThuoc)->get();
+
+        //print_r($quanao);
+        //exit();
+        return view('page.chitiet',compact('quanao'));
     }
 
 

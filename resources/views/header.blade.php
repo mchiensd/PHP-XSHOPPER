@@ -89,13 +89,17 @@
 
 
 							<!-- QUICK SHOP CART -->
-                                                   
+							
 							<li class="quick-carts">
 								<a href="/resources/views/page/giohang.blade.php">
-									<span id="countcart" class="badge badge-aqua btn-xs badge-corner">?</span>
+									<span id="countcart" class="badge badge-aqua btn-xs badge-corner">
+										2
+									</span>
 									<i class="fa fa-shopping-cart"></i> 
 								</a>
 								</a>
+						                                                   
+							
 
 								<!--	<h4>Shop Cart</h4>
 
